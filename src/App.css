@@ -92,7 +92,7 @@ select {
 }
 
 .SingleReviewImage{
-  width: 350px;
+  width: auto;
   
 }
 
@@ -100,10 +100,12 @@ select {
   margin: auto;
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   grid-template-rows: auto 1fr;
   align-items: center;
   justify-content: center;
+  margin: 2em;
+  column-gap: 2em;
 }
 
 .SingleReviewText {
@@ -120,10 +122,10 @@ select {
   grid-template-columns: 1.8fr 1fr;
   align-items: center;
   justify-content: center;
- 
-  margin: auto;
+    margin: auto;
   margin-bottom: 25px;
   padding: 15px;
+  
   
 }
 
