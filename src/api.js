@@ -18,10 +18,7 @@ export const incVote = (reviewID, increment) => {
     .then((res) => res.data);
 };
 
-
-
 export const fetchComments = (reviewID) => {
   console.log(reviewID);
   return api.get(`reviews/${reviewID}/comments`).then((res) => res.data);
 };
-
