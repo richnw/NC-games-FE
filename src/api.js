@@ -7,3 +7,7 @@ const api = axios.create({
 export const fetchReviews = () => {
   return api.get("reviews").then((res) => res.data);
 };
+
+export const fetchReview = (reviewID) => {
+  return api.get(`reviews/${reviewID}`).then((res) => res.data);
+};

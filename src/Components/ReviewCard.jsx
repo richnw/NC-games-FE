@@ -1,5 +1,4 @@
 const ReviewCard = ({ review }) => {
-  console.log(review);
   return (
     <li className="reviewCard">
       {review.title}
