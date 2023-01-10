@@ -14,8 +14,6 @@ const Comments = () => {
     });
   }, [reviewID]);
 
-  console.log(comments);
-
   if (isLoading) return <h1>Loading...</h1>;
   return (
     <main>
