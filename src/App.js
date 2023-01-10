@@ -9,12 +9,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Reviews />} />
-        <Route path="/reviews/:reviewID" element={<SingleReview />} />
-      </Routes>
+      <div className="App">
+        <Header />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Reviews />} />
+          <Route path="/reviews/:reviewID" element={<SingleReview />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

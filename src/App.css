@@ -64,10 +64,9 @@ select {
   }
 }
 
-* {
+.App {
   text-align: center;
 }
-
 
 
 .Header {

@@ -1,7 +1,9 @@
 import * as api from "../api";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useParams } from "react";
 
 const SingleReview = () => {
+  const reviewID = useParams();
+  console.log(reviewID);
   const [currentReview, setCurrentReview] = useState({});
 
   useEffect(() => {
@@ -9,6 +11,7 @@ const SingleReview = () => {
       setCurrentReview(review);
     });
   }, []);
+  console.log(currentReview);
 
   return currentReview.designer;
 };
