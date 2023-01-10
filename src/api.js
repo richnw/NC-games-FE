@@ -13,5 +13,6 @@ export const fetchReview = (reviewID) => {
 };
 
 export const fetchComments = (reviewID) => {
+  console.log(reviewID);
   return api.get(`reviews/${reviewID}/comments`).then((res) => res.data);
 };

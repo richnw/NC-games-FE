@@ -1,6 +1,6 @@
 import * as api from "../api";
 import { useEffect, useState } from "react";
-import { Route, useParams } from "react-router";
+import { useParams } from "react-router";
 import moment from "moment";
 import Comments from "./Comments";
 
@@ -30,8 +30,10 @@ const SingleReview = () => {
         src={`${currentReview.review_img_url}`}
         alt={`${currentReview.title}`}
       />
-      <h3>Comments:</h3>
-      <Route path="/reviews/:reviewID/comments" element={<Comments />} />
+      <section className="CommentsOnSingleReview">
+        <h3>Comments:</h3>
+        <Comments />
+      </section>
     </main>
   );
 };
