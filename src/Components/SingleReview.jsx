@@ -1,7 +1,8 @@
 import * as api from "../api";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Route, useParams } from "react-router";
 import moment from "moment";
+import Comments from "./Comments";
 
 const SingleReview = () => {
   const { reviewID } = useParams();
@@ -30,6 +31,7 @@ const SingleReview = () => {
         alt={`${currentReview.title}`}
       />
       <h3>Comments:</h3>
+      <Route path="/reviews/:reviewID/comments" element={<Comments />} />
     </main>
   );
 };

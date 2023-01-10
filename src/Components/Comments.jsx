@@ -1,3 +1,6 @@
+import * as api from "../api";
+import { useEffect, useState } from "react";
+
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +16,7 @@ const Comments = () => {
   return (
     <ul>
       {comments.map((comment) => (
-        <ReviewCard review={review} />
+        <li>{`${comment.author}`}</li>
       ))}
     </ul>
   );
