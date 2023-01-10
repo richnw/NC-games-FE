@@ -20,10 +20,10 @@ const SingleReview = () => {
       <section className="SingleReviewText">
         <p>designer: {currentReview.designer} </p>
         <p>user: {currentReview.owner}</p>
-        <p>{moment(currentReview.created_at).format("LLL")}</p>
-        <p>{currentReview.review_body} </p>
-        <p>Votes: {currentReview.votes} </p>
-        <p> Comment Count: {currentReview.comment_count} </p>
+        {moment(currentReview.created_at).format("LLL")} <br />
+        <p className="ReviewBody">{currentReview.review_body}</p> <br />
+        Votes: {currentReview.votes} <br />
+        Comment Count: {currentReview.comment_count}
       </section>
       <img
         className="SingleReviewImage"
