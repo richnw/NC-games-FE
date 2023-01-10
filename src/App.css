@@ -66,6 +66,7 @@ select {
 
 .App {
   text-align: center;
+  font-size: medium;
 }
 
 
@@ -88,6 +89,27 @@ select {
 .reviewImage {
   width: 100px;
   height: 100px;
+}
+
+.SingleReviewImage{
+  width: 350px;
+  
+}
+
+.SingleReview{
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.SingleReviewText {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-size: 100%;
 }
 
 .reviewCard {
