@@ -24,6 +24,7 @@ const Comments = () => {
           <li>
             <p> user: {`${comment.author}`} </p>
             <p> {`${comment.body}`} </p>
+            <br />
           </li>
         ))}
       </ul>
