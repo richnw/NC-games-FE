@@ -7,12 +7,15 @@ const SingleReview = () => {
   const { reviewID } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
+  const [err, setErr] = useState(null);
 
   const addVote = (increment) => {
-    setReviewVotes((currVotes) => {
-      return currVotes + increment;
+    setReviewVotes((currVotes) => currVotes + increment);
+    setErr(null);
+    api.incVote(reviewID, increment).catch((err) => {
+      setReviewVotes((currVotes) => currVotes - increment);
+      setErr("Something went wrong, please try again.");
     });
-    api.incVote(reviewID, increment);
   };
 
   useEffect(() => {
@@ -35,6 +38,7 @@ const SingleReview = () => {
           <button onClick={() => addVote(1)}>👍</button>
           <button onClick={() => addVote(-1)}>👎</button>
         </p>
+        {err ? <p>{err}</p> : ""}
         <p> Comment Count: {currentReview.comment_count} </p>
       </section>
       <img
