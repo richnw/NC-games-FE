@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import moment from "moment";
 import { Route, Routes, Link } from "react-router-dom";
-import Comments from "./Comments";
+import CommentsForSingleReview from "./CommentsForSingleReview";
 
 const SingleReview = () => {
   const { reviewID } = useParams();
@@ -14,7 +14,7 @@ const SingleReview = () => {
   <Routes>
     <Route
       path="/reviews/:reviewID/comments"
-      element={<Comments review={currentReview} />}
+      element={<CommentsForSingleReview review={currentReview} />}
     />
   </Routes>;
 
@@ -61,7 +61,7 @@ const SingleReview = () => {
       <p className="ReviewBody">{currentReview.review_body}</p>
       <section className="CommentsOnSingleReview">
         <h3>Comments:</h3>
-        <Comments />
+        <CommentsForSingleReview />
       </section>
     </main>
   );

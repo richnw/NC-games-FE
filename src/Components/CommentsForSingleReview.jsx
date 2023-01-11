@@ -2,7 +2,7 @@ import * as api from "../api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const Comments = () => {
+const CommentsForSingleReview = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { reviewID } = useParams();
@@ -33,10 +33,4 @@ const Comments = () => {
     );
 };
 
-import ReviewCardForComments from "./ReviewCardForComments";
-
-const Comments = (review) => {
-  return <ReviewCardForComments review={review} />;
-};
-
-export default Comments;
+export default CommentsForSingleReview;
