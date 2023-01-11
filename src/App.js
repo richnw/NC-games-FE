@@ -14,7 +14,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Reviews />} />
-          <Route path="/reviews/:reviewID" element={<SingleReview />} />
+          <Route path="/reviews/:reviewID/*" element={<SingleReview />} />
         </Routes>
       </div>
     </BrowserRouter>
