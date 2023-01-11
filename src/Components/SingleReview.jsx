@@ -41,7 +41,6 @@ const SingleReview = () => {
         </p>
         {err ? <p>{err}</p> : ""}
         <p> Comment Count: {currentReview.comment_count} </p>
-        {moment(currentReview.created_at).format("LLL")} <br />
       </section>
       <img
         className="SingleReviewImage"
