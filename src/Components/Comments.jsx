@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as api from "../api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -31,6 +32,12 @@ const Comments = () => {
         </ul>
       </main>
     );
+=======
+import ReviewCardForComments from "./ReviewCardForComments";
+
+const Comments = (review) => {
+  return <ReviewCardForComments review={review} />;
+>>>>>>> 0b99d54 (add links to separate comments page)
 };
 
 export default Comments;

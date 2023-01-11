@@ -2,6 +2,7 @@ import * as api from "../api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import moment from "moment";
+import { Route, Routes, Link } from "react-router-dom";
 import Comments from "./Comments";
 
 const SingleReview = () => {
@@ -9,6 +10,13 @@ const SingleReview = () => {
   const [currentReview, setCurrentReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
   const [err, setErr] = useState(null);
+
+  <Routes>
+    <Route
+      path="/reviews/:reviewID/comments"
+      element={<Comments review={currentReview} />}
+    />
+  </Routes>;
 
   const addVote = (increment) => {
     setReviewVotes((currVotes) => currVotes + increment);
@@ -41,6 +49,9 @@ const SingleReview = () => {
         </p>
         {err ? <p>{err}</p> : ""}
         <p> Comment Count: {currentReview.comment_count} </p>
+        <Link to={`/reviews/${currentReview.review_id}/comments}`}>
+          <button>Comments</button>
+        </Link>
       </section>
       <img
         className="SingleReviewImage"
