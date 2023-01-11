@@ -17,7 +17,18 @@ const Comments = ({ currentUser }) => {
 
   if (isLoading) return <p>Loading...</p>;
   else if (comments.length === 0)
-    return <p>No comments on this review... yet</p>;
+    return (
+      <section>
+        <p>
+          <CommentAdder
+            currentUser={currentUser}
+            setComments={setComments}
+            reviewID={reviewID}
+          />
+        </p>
+        <p>No comments on this review... yet</p>
+      </section>
+    );
   else
     return (
       <main>
