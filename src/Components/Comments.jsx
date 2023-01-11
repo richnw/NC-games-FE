@@ -15,19 +15,22 @@ const Comments = () => {
   }, [reviewID]);
 
   if (isLoading) return <h1>Loading...</h1>;
-  return (
-    <main>
-      <ul>
-        {comments.map((comment) => (
-          <li>
-            <p> user: {`${comment.author}`} </p>
-            <p> {`${comment.body}`} </p>
-            <br />
-          </li>
-        ))}
-      </ul>
-    </main>
-  );
+  else if (comments.length === 0)
+    return <p>No comments on this review... yet</p>;
+  else
+    return (
+      <main>
+        <ul>
+          {comments.map((comment) => (
+            <li>
+              <p> user: {`${comment.author}`} </p>
+              <p> {`${comment.body}`} </p>
+              <br />
+            </li>
+          ))}
+        </ul>
+      </main>
+    );
 };
 
 export default Comments;
