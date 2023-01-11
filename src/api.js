@@ -19,6 +19,15 @@ export const incVote = (reviewID, increment) => {
 };
 
 export const fetchComments = (reviewID) => {
-  console.log(reviewID);
   return api.get(`reviews/${reviewID}/comments`).then((res) => res.data);
+};
+
+export const postComment = (reviewID, newComment) => {
+  console.log(reviewID, newComment);
+  return api
+    .post(`reviews/${reviewID}/comments`, {
+      username: "jessjelly",
+      body: newComment,
+    })
+    .then((res) => res.data);
 };

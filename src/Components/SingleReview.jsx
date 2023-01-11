@@ -49,7 +49,6 @@ const SingleReview = () => {
       />
       <p className="ReviewBody">{currentReview.review_body}</p>
       <section className="CommentsOnSingleReview">
-        <h3>Comments:</h3>
         <Comments />
       </section>
     </main>
