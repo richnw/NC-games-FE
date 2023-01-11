@@ -14,7 +14,7 @@ const Comments = () => {
     });
   }, [reviewID]);
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <p>Loading...</p>;
   else if (comments.length === 0)
     return <p>No comments on this review... yet</p>;
   else
