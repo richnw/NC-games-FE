@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import moment from "moment";
 import Comments from "./Comments";
 
-const SingleReview = () => {
+const SingleReview = (currentUser) => {
   const { reviewID } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
@@ -49,7 +49,7 @@ const SingleReview = () => {
       />
       <p className="ReviewBody">{currentReview.review_body}</p>
       <section className="CommentsOnSingleReview">
-        <Comments />
+        <Comments currentUser={currentUser} />
       </section>
     </main>
   );

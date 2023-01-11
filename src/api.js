@@ -22,11 +22,11 @@ export const fetchComments = (reviewID) => {
   return api.get(`reviews/${reviewID}/comments`).then((res) => res.data);
 };
 
-export const postComment = (reviewID, newComment) => {
+export const postComment = (reviewID, newComment, currentUser) => {
   console.log(reviewID, newComment);
   return api
     .post(`reviews/${reviewID}/comments`, {
-      username: "jessjelly",
+      username: currentUser,
       body: newComment,
     })
     .then((res) => res.data);

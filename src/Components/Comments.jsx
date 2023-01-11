@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CommentAdder from "./CommentAdder";
 
-const Comments = (newComment) => {
+const Comments = ({ currentUser }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { reviewID } = useParams();
@@ -21,7 +21,11 @@ const Comments = (newComment) => {
   else
     return (
       <main>
-        <CommentAdder setComments={setComments} reviewID={reviewID} />
+        <CommentAdder
+          currentUser={currentUser}
+          setComments={setComments}
+          reviewID={reviewID}
+        />
         <ul>
           {comments.map((comment) => (
             <li>
