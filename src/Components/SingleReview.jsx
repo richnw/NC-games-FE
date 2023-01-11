@@ -6,10 +6,22 @@ import moment from "moment";
 const SingleReview = () => {
   const { reviewID } = useParams();
   const [currentReview, setCurrentReview] = useState({});
+  const [reviewVotes, setReviewVotes] = useState(0);
+  const [err, setErr] = useState(null);
+
+  const addVote = (increment) => {
+    setReviewVotes((currVotes) => currVotes + increment);
+    setErr(null);
+    api.incVote(reviewID, increment).catch((err) => {
+      setReviewVotes((currVotes) => currVotes - increment);
+      setErr("Something went wrong, please try again.");
+    });
+  };
 
   useEffect(() => {
     api.fetchReview(reviewID).then(({ review }) => {
       setCurrentReview(review);
+      setReviewVotes(review.votes);
     });
   }, [reviewID]);
 
@@ -21,7 +33,12 @@ const SingleReview = () => {
         <p>user: {currentReview.owner}</p>
         <p>{moment(currentReview.created_at).format("LLL")}</p>
         <p>{currentReview.review_body} </p>
-        <p>Votes: {currentReview.votes} </p>
+        <p>
+          Votes: {reviewVotes}
+          <button onClick={() => addVote(1)}>👍</button>
+          <button onClick={() => addVote(-1)}>👎</button>
+        </p>
+        {err ? <p>{err}</p> : ""}
         <p> Comment Count: {currentReview.comment_count} </p>
       </section>
       <img
