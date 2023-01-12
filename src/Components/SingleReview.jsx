@@ -3,28 +3,38 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import moment from "moment";
 import Comments from "./Comments";
+import Error from "./Error";
 
 const SingleReview = (currentUser) => {
   const { reviewID } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
-  const [err, setErr] = useState(null);
+  const [error, setError] = useState(null);
 
   const addVote = (increment) => {
     setReviewVotes((currVotes) => currVotes + increment);
-    setErr(null);
+    setError(null);
     api.incVote(reviewID, increment).catch((err) => {
       setReviewVotes((currVotes) => currVotes - increment);
-      setErr("Something went wrong, please try again.");
+      setError("Something went wrong, please try again.");
     });
   };
 
   useEffect(() => {
-    api.fetchReview(reviewID).then(({ review }) => {
-      setCurrentReview(review);
-      setReviewVotes(review.votes);
-    });
+    api
+      .fetchReview(reviewID)
+      .then(({ review }) => {
+        setCurrentReview(review);
+        setReviewVotes(review.votes);
+      })
+      .catch((err) => {
+        setError({ err });
+      });
   }, [reviewID]);
+
+  if (error) {
+    return <Error />;
+  }
 
   return (
     <main className="SingleReview">
@@ -39,7 +49,7 @@ const SingleReview = (currentUser) => {
           <button onClick={() => addVote(1)}>👍</button>
           <button onClick={() => addVote(-1)}>👎</button>
         </p>
-        {err ? <p>{err}</p> : ""}
+        {error ? <p>{error}</p> : ""}
         <p> Comment Count: {currentReview.comment_count} </p>
       </section>
       <img

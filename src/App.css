@@ -130,3 +130,7 @@ select {
   
 }
 
+.Error {
+  color: darkred;
+}
+
