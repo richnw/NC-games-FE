@@ -47,9 +47,7 @@ const SingleReview = () => {
         src={`${currentReview.review_img_url}`}
         alt={`${currentReview.title}`}
       />
-      <p className="ReviewBody">{currentReview.review_body}</p> <br />
-      Votes: {currentReview.votes} <br />
-      Comment Count: {currentReview.comment_count}
+      <p className="ReviewBody">{currentReview.review_body}</p>
       <section className="CommentsOnSingleReview">
         <h3>Comments:</h3>
         <Comments />
