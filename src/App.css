@@ -129,12 +129,6 @@ select {
   font-size: 1rem;
 }
 
-
-
-
-
-
-
 .ReviewCard {
   width: 400px;
   border: 1px;
@@ -159,21 +153,12 @@ select {
     margin: auto;
   margin-bottom: 25px;
   padding: 15px;
-
-  
-  
 }
 
 .Error {
   color: darkred;
 }
-  margin: auto;
-  margin-bottom: 1em;
-  padding: 1em;
-  text-align: center;
-  
-}
-
+ 
 a:link { text-decoration: none;
 color: #141204; }
 

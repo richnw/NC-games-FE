@@ -50,10 +50,4 @@ const Comments = ({ currentUser }) => {
     );
 };
 
-import ReviewCardForComments from "./ReviewCardForComments";
-
-const Comments = (review) => {
-  return <ReviewCardForComments review={review} />;
-};
-
 export default Comments;
