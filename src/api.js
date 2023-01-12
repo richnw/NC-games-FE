@@ -32,9 +32,9 @@ export const postComment = (reviewID, newComment, currentUser) => {
 };
 
 export const fetchCategoryBySlug = (category_slug) => {
-  return api.get(`/reviews?category=${category_slug}`).then((res) => res.data);
+  return api.get(`reviews?category=${category_slug}`).then((res) => res.data);
 };
 
 export const getCategories = () => {
-  return api.get("categores").then((res) => res.data);
+  return api.get("categories").then((res) => res.data);
 };
