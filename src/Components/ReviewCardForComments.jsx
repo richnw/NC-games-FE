@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-const ReviewCard = ({ review }) => {
+const ReviewCardForComments = (review) => {
   return (
-    <li className="ReviewCard">
+    <li className="reviewCard">
       <Link to={`/reviews/${review.review_id}`}>
-        <h3> {review.title}</h3>
+        {review.title}
+        <br />
         <br />
         user: {review.owner}
         <br />
@@ -19,4 +20,4 @@ const ReviewCard = ({ review }) => {
   );
 };
 
-export default ReviewCard;
+export default ReviewCardForComments;

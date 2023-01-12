@@ -1,9 +1,8 @@
 import * as api from "../api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CommentAdder from "./CommentAdder";
 
-const Comments = ({ currentUser }) => {
+const CommentsForSingleReview = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { reviewID } = useParams();
@@ -17,26 +16,10 @@ const Comments = ({ currentUser }) => {
 
   if (isLoading) return <p>Loading...</p>;
   else if (comments.length === 0)
-    return (
-      <section>
-        <p>
-          <CommentAdder
-            currentUser={currentUser}
-            setComments={setComments}
-            reviewID={reviewID}
-          />
-        </p>
-        <p>No comments on this review... yet</p>
-      </section>
-    );
+    return <p>No comments on this review... yet</p>;
   else
     return (
       <main>
-        <CommentAdder
-          currentUser={currentUser}
-          setComments={setComments}
-          reviewID={reviewID}
-        />
         <ul>
           {comments.map((comment) => (
             <li>
@@ -50,10 +33,4 @@ const Comments = ({ currentUser }) => {
     );
 };
 
-import ReviewCardForComments from "./ReviewCardForComments";
-
-const Comments = (review) => {
-  return <ReviewCardForComments review={review} />;
-};
-
-export default Comments;
+export default CommentsForSingleReview;
