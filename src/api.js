@@ -23,11 +23,18 @@ export const fetchComments = (reviewID) => {
 };
 
 export const postComment = (reviewID, newComment, currentUser) => {
-  console.log(reviewID, newComment);
   return api
     .post(`reviews/${reviewID}/comments`, {
       username: currentUser,
       body: newComment,
     })
     .then((res) => res.data);
+};
+
+export const fetchCategoryBySlug = (category_slug) => {
+  return api.get(`/reviews?category=${category_slug}`).then((res) => res.data);
+};
+
+export const getCategories = () => {
+  return api.get("categores").then((res) => res.data);
 };
