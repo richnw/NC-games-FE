@@ -21,6 +21,9 @@ const CommentAdder = ({ currentUser, setComments, reviewID }) => {
       })
       .catch((err) => {
         setError({ err });
+        setComments((currComments) => {
+          return currComments.slice(1);
+        });
       });
   };
 
