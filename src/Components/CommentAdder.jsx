@@ -3,7 +3,6 @@ import * as api from "../api";
 
 const CommentAdder = ({ currentUser, setComments, reviewID }) => {
   const [newComment, setNewComment] = useState("");
-  console.log(currentUser);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +21,7 @@ const CommentAdder = ({ currentUser, setComments, reviewID }) => {
     <form onSubmit={handleSubmit}>
       <label htmlFor="Add a new comment">
         <input
+          required="required"
           placeholder="Write your comment here..."
           type="text"
           value={newComment}
