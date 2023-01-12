@@ -43,7 +43,7 @@ const SingleReview = (currentUser) => {
         <p>designer: {currentReview.designer} </p>
         <p>user: {currentReview.owner}</p>
         <p>{moment(currentReview.created_at).format("LLL")}</p>
-        <p>{currentReview.review_body} </p>
+        <p className="ReviewBody">{currentReview.review_body} </p>
         <p>
           Votes: {reviewVotes}
           <button onClick={() => addVote(1)}>👍</button>
@@ -57,7 +57,6 @@ const SingleReview = (currentUser) => {
         src={`${currentReview.review_img_url}`}
         alt={`${currentReview.title}`}
       />
-      <p className="ReviewBody">{currentReview.review_body}</p>
       <section className="CommentsOnSingleReview">
         <Comments currentUser={currentUser} />
       </section>
