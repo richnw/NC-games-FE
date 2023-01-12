@@ -1,8 +1,16 @@
+@media screen and (min-width: 501px) {
+  .VotesAndAddComment {
+    font-size: 2.7rem;
+  }
+}
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 
 body,
 h1,
@@ -107,15 +115,16 @@ select {
   justify-content: center;
   margin: 2em;
   column-gap: 2em;
+  font-size: 1rem;
 }
 
-.SingleReviewText {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  font-size: 100%;
-}
 
-.reviewCard {
+
+
+
+
+
+.ReviewCard {
   width: 400px;
   border: 1px;
   border-style: groove;
@@ -126,6 +135,7 @@ select {
     margin: auto;
   margin-bottom: 25px;
   padding: 15px;
+
   
   
 }

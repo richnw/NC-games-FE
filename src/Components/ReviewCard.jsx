@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ReviewCard = ({ review }) => {
   return (
-    <li className="reviewCard">
+    <li className="ReviewCard">
       <Link to={`/reviews/${review.review_id}`}>
         {review.title}
         <br />

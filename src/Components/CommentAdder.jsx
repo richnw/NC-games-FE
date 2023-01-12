@@ -29,7 +29,7 @@ const CommentAdder = ({ currentUser, setComments, reviewID }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="VotesAndAddComment" onSubmit={handleSubmit}>
       <label htmlFor="Add a new comment">
         <input
           required="required"

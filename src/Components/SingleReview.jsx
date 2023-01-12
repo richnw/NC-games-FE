@@ -44,7 +44,7 @@ const SingleReview = (currentUser) => {
         <p>user: {currentReview.owner}</p>
         <p>{moment(currentReview.created_at).format("LLL")}</p>
         <p className="ReviewBody">{currentReview.review_body} </p>
-        <p>
+        <p className="VotesAndAddComment">
           Votes: {reviewVotes}
           <button onClick={() => addVote(1)}>👍</button>
           <button onClick={() => addVote(-1)}>👎</button>
