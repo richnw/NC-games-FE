@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("jessjelly");
+  if (currentUser !== "jessjelly") setCurrentUser("jessjelly");
+
   return (
     <BrowserRouter>
       <div className="App">

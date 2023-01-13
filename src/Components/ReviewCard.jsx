@@ -5,7 +5,6 @@ const ReviewCard = ({ review }) => {
     <li className="ReviewCard">
       <Link to={`/reviews/${review.review_id}`}>
         <h3> {review.title}</h3>
-        <br />
         user: {review.owner}
         <br />
         votes: {review.votes}
