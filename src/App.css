@@ -36,7 +36,7 @@ html:focus-within {
 }
 
 body {
-  min-height: 100vh;
+  background-color: #E2E2E2;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -142,21 +142,7 @@ select {
  margin-bottom: 2rem;
 }
 
-.reviewCard {
-  width: 40em;
-  border-style: groove;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 25px;
-  padding: 15px;
-  
-  }
 
-  .reviewCard > :any-link {
-    color: #141204;
-  }
 
   .Nav {
     font-size:larger;
