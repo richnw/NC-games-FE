@@ -42,7 +42,9 @@ const CommentAdder = ({ currentUser, setComments, reviewID }) => {
           onChange={(e) => setNewComment(e.target.value)}
         />
       </label>
-      <button type="submit">Add comment</button>
+      <button className="VoteButton" type="submit">
+        Add comment
+      </button>
     </form>
   );
 };

@@ -6,7 +6,7 @@ import moment from "moment";
 import Comments from "./Comments";
 import Error from "./Error";
 
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import CommentsForSingleReview from "./CommentsForSingleReview";
 
 const SingleReview = (currentUser) => {
@@ -65,10 +65,6 @@ const SingleReview = (currentUser) => {
           </button>
         </p>
         {error ? <p>{error}</p> : ""}
-        <p> Comment Count: {currentReview.comment_count} </p>
-        <Link to={`/reviews/${currentReview.review_id}/comments}`}>
-          <button>Comments</button>
-        </Link>
       </section>
       <img
         className="SingleReviewImage"
@@ -76,6 +72,7 @@ const SingleReview = (currentUser) => {
         alt={`${currentReview.title}`}
       />
       <section className="CommentsOnSingleReview">
+        <h3> Comment Count: {currentReview.comment_count} </h3>
         <Comments currentUser={currentUser} />
       </section>
     </main>
