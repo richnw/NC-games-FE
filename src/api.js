@@ -4,8 +4,10 @@ const api = axios.create({
   baseURL: "https://nc-games-z0p2.onrender.com/api/",
 });
 
-export const fetchReviews = () => {
-  return api.get("reviews").then((res) => res.data);
+export const fetchReviews = (category) => {
+  return api
+    .get("reviews", { params: { category: category } })
+    .then((res) => res.data);
 };
 
 export const fetchReview = (reviewID) => {

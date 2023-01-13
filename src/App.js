@@ -5,7 +5,6 @@ import Nav from "./Components/Nav";
 import Reviews from "./Components/Reviews";
 import SingleReview from "./Components/SingleReview";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SingleCategory from "./Components/SingleCategory";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("jessjelly");
@@ -16,7 +15,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Reviews />} />
-          <Route path="/reviews/:category_slug" element={<SingleCategory />} />
+          <Route path=":category" element={<Reviews />} />
           <Route
             path="/reviews/:reviewID/*"
             element={<SingleReview currentUser={currentUser} />}
