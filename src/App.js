@@ -15,6 +15,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Reviews />} />
+          <Route path=":category" element={<Reviews />} />
           <Route
             path="/reviews/:reviewID/*"
             element={<SingleReview currentUser={currentUser} />}

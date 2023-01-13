@@ -153,7 +153,24 @@ select {
     margin: auto;
   margin-bottom: 25px;
   padding: 15px;
+    }
+
+  .Nav {
+    font-size: large;
+    background-color: #21242b;
+    color: white;
+  }
+
+  .NavLink {
+    margin-top: 2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
 }
+
 
 .Error {
   color: darkred;
