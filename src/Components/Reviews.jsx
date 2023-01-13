@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 import Error from "./Error";
 
-
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +33,6 @@ const Reviews = () => {
       });
   }, []);
 
-
   if (error) {
     return <Error />;
   }
@@ -43,7 +41,7 @@ const Reviews = () => {
 
   return (
     <main>
-      <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+      {/* <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2> */}
       <ul>
         {reviews.map((review) => (
           <ReviewCard review={review} />
