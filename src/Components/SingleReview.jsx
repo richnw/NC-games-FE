@@ -9,7 +9,6 @@ import Error from "./Error";
 import { Route, Routes, Link } from "react-router-dom";
 import CommentsForSingleReview from "./CommentsForSingleReview";
 
-
 const SingleReview = (currentUser) => {
   const { reviewID } = useParams();
   const [currentReview, setCurrentReview] = useState({});
@@ -58,8 +57,12 @@ const SingleReview = (currentUser) => {
         <p className="ReviewBody">{currentReview.review_body} </p>
         <p className="VotesAndAddComment">
           Votes: {reviewVotes}
-          <button onClick={() => addVote(1)}>👍</button>
-          <button onClick={() => addVote(-1)}>👎</button>
+          <button className="VoteButton" onClick={() => addVote(1)}>
+            👍
+          </button>
+          <button className="VoteButton" onClick={() => addVote(-1)}>
+            👎
+          </button>
         </p>
         {error ? <p>{error}</p> : ""}
         <p> Comment Count: {currentReview.comment_count} </p>
@@ -73,12 +76,7 @@ const SingleReview = (currentUser) => {
         alt={`${currentReview.title}`}
       />
       <section className="CommentsOnSingleReview">
-
         <Comments currentUser={currentUser} />
-
-        <h3>Comments:</h3>
-        <CommentsForSingleReview />
-
       </section>
     </main>
   );

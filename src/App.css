@@ -175,6 +175,18 @@ select {
     padding-right: 0.5em;
   }
 
+.VoteButton {
+  background-color: #E2E2E2;
+  border-radius: 20%;
+  font-size: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  box-shadow: 1rem 1rem 1rem #979797
+}
+
 
 
 
