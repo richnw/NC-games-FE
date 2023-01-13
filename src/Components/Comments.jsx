@@ -39,7 +39,7 @@ const Comments = ({ currentUser }) => {
         />
         <ul>
           {comments.map((comment) => (
-            <li className="CommentsListItem">
+            <li key={comment.comment_id} className="CommentsListItem">
               <p> user: {`${comment.author}`} </p>
               <p> {`${comment.body}`} </p>
             </li>
