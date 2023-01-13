@@ -1,8 +1,16 @@
+@media screen and (min-width: 501px) {
+  .VotesAndAddComment {
+    font-size: 2.7rem;
+  }
+}
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 
 body,
 h1,
@@ -65,21 +73,29 @@ select {
 }
 
 .App {
+
   text-align: center;
   font-size: medium;
+  background-color: #E2E2E2;
+  color: #141204;
+
 }
 
 
 .Header {
-  background-color: #21242b;
+  background-color: #141204;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #E2E2E2;
   text-align: center;
+}
+
+.HeaderTitle {
+  color: #E2E2E2;
 }
 
 .App-link {
@@ -87,6 +103,9 @@ select {
 }
 
 .reviewImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 100px;
   height: 100px;
 }
@@ -107,20 +126,28 @@ select {
   justify-content: center;
   margin: 2em;
   column-gap: 2em;
+  font-size: 1rem;
+}
+
+.ReviewCard {
+  width: 400px;
+  border: 1px;
+ display: block;
+ padding-left: 5em;
+ padding-right: 5em;
+ margin: auto;
 }
 
 .SingleReviewText {
   grid-column-start: 1;
   grid-column-end: 2;
-  font-size: 100%;
+  font-size: 0.8rem;
 }
 
 .reviewCard {
-  width: 400px;
-  border: 1px;
+  width: 40em;
   border-style: groove;
-  display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  display: block;
   align-items: center;
   justify-content: center;
     margin: auto;
@@ -141,4 +168,27 @@ select {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
+
+}
+
+
+.Error {
+  color: darkred;
+}
+ 
+a:link { text-decoration: none;
+color: #141204; }
+
+
+a:visited { text-decoration: none;
+  color: #141204; }
+
+
+a:hover { text-decoration: none; 
+  color: #141204; }
+
+
+a:active { text-decoration: none;
+color: #141204; }
+
 
