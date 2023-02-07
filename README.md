@@ -1,6 +1,6 @@
-## NC Games
+## Project Description
 
-This is a full stack React App I built as part of my NorthCoders bootcamp. It is deployed here https://richboardgames.netlify.app/. The back end repo is here https://github.com/richnw/NC-games-BE
+This is the React front end of a full stack app I built. It is deployed here https://richboardgames.netlify.app/. The backend repo is here https://github.com/richnw/NC-games-BE
 
 The website hosts board game reviews accessed with various API calls to a PSQL database. Some actions include filtered queries, adding comments and upvoting.
 
